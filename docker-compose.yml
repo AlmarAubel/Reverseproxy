@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./Webservice1/Dockerfile     
+    ports:
+      - "5001:5000"
+  reverse:
+    container_name: reverse
+    hostname: reverse
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      #- <path/to/your/certs>:/etc/ssl/private
