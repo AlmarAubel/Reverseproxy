@@ -17,4 +17,5 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/sites-enabled/:/etc/nginx/site-enabled:ro
+      - ./front-end/dist/:/etc/nginx/vue:ro
       #- <path/to/your/certs>:/etc/ssl/private
