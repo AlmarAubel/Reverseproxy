@@ -1,11 +1,6 @@
 version: '3'
 
 services:
-  regextester:
-    container_name: regextester
-    build: regextester
-    ports:
-      - "80:80"
   backend:
     build:
       context: .
@@ -21,4 +16,5 @@ services:
       - 443:443
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/sites-enabled/:/etc/nginx/site-enabled:ro
       #- <path/to/your/certs>:/etc/ssl/private
